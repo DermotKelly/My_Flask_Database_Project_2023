@@ -3,5 +3,5 @@ Gunicorn
 flask-sqlalchemy==3.0.3;
 Flask-Login==0.6.2;
 numpy;
-psycog2
+psycopg2
 psycopg2-binary
