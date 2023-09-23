@@ -11,8 +11,8 @@ from config import Config
 app = Flask(__name__)
 app.config.from_object(Config)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://database_cjro_user:NV7T7Lc3ZPOpzhKHxJJmSOXzieu3ssWY@dpg-ck7ar3o8elhc7393mi80-a.oregon-postgres.render.com/database_cjro"
-app.config['SECRET_KEY'] = 'your_secret_key'
+#app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://database_cjro_user:NV7T7Lc3ZPOpzhKHxJJmSOXzieu3ssWY@dpg-ck7ar3o8elhc7393mi80-a.oregon-postgres.render.com/database_cjro"
+#app.config['SECRET_KEY'] = 'your_secret_key'
 db = SQLAlchemy(app)    
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
@@ -38,6 +38,11 @@ def load_user(user_id):
 def index():
     posts = BlogPost.query.all()
     return render_template('index.html', posts=posts)
+
+@app.route('/base')
+def base():
+    posts = BlogPost.query.all()
+    return render_template('base.html', posts=posts)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -131,8 +136,14 @@ def stats():
                            c_average_length=c_average_length, c_max_length=c_max_length, c_min_length=c_min_length,
                            c_total_length=c_total_length, c_median_length=c_median_length)
 
-with app.app_context():
+
+
+@app.cli.command('init_db')
+def initialize_database():
+    """Initialize the database."""
+    db.drop_all()
     db.create_all()
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
