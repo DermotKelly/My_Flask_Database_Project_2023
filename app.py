@@ -7,14 +7,10 @@ import os
 from config import Config
 
 
-#file_path = os.path.abspath(os.getcwd())+"/blog.db"
+
 
 app = Flask(__name__)
 app.config.from_object(Config)
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
-#app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://database_cjro_user:NV7T7Lc3ZPOpzhKHxJJmSOXzieu3ssWY@dpg-ck7ar3o8elhc7393mi80-a.oregon-postgres.render.com/database_cjro"
-#app.config['SECRET_KEY_DB'] = 'your_secret_key'
-#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 db = SQLAlchemy(app)    
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
