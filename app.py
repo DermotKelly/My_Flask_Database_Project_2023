@@ -2,18 +2,22 @@ from flask import Flask, render_template, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin, current_user
 from datetime import datetime
+import psycopg2
 import numpy as np
 import os
 from config import Config
 
 
 
-
 app = Flask(__name__)
 app.config.from_object(Config)
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://database_cjro_user:NV7T7Lc3ZPOpzhKHxJJmSOXzieu3ssWY@dpg-ck7ar3o8elhc7393mi80-a.oregon-postgres.render.com/database_cjro"
+app.config['SECRET_KEY'] = 'your_secret_key'
 db = SQLAlchemy(app)    
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
+
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
