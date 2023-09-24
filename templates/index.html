@@ -25,14 +25,9 @@
               </form>
               <ul>
                 <li><a href="{{ url_for('index') }}">Home</a></li>
-            {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('create') }}">Create Post</a></li>
-                <li><a href="{{ url_for('logout') }}">Logout</a></li>
-                <li><a href="{{ url_for('stats') }}">Stats</a></li>
-            {% else %}
                 <li><a href="{{ url_for('login') }}">Login</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
-            {% endif %}
+          
                 
             </ul>
             </nav>
@@ -67,6 +62,16 @@
      
         <nav class="navbar">
             Side Nav
+            <ul>
+                {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('create') }}">Create Post</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                <li><a href="{{ url_for('stats') }}">Stats</a></li>
+                {% else %}
+                
+                {% endif %}   
+            </ul>       
+            
         </nav>  
        
                  
@@ -80,14 +85,12 @@
             {% endblock %}
             </ul>
 
-<p>
-    In literary theory, a text is any object that can be "read", whether this object is a work of literature, a street sign, an arrangement of buildings on a city block, or styles of clothing. It is a coherent set of signs that transmits some kind of informative message.
-</p>
+
 
         </main>
         
         <footer>
-            <div class="copyright-text">Copyright 2023 &copy; My <strong>MY BLOG-</strong>  <i> All Rights Reserved</i></div>    
+            <div class="copyright-text">Copyright 2023 &copy; My <strong>-BLOG</strong>  <i> All Rights Reserved</i></div>    
         </footer>
 
     </wrapper>

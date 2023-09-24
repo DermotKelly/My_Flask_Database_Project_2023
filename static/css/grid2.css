@@ -39,7 +39,7 @@ Style Wrapper
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     height: 100%;
     background-color: black;
-    border-color: 5px solid #fff;
+    border-radius: 20px;
 }
 
 
@@ -97,3 +97,26 @@ footer {
 /*********************************
   Style Navigation Bar
 ********************************/
+
+
+
+/*********************************
+  Style Login Logout Forms
+********************************/
+
+.login {background-color: red;
+border: 3px solid white;
+max-width: 70%;
+margin:auto;
+padding:2rem;
+}
+.login label{display: flex;}
+
+.login input {
+    display: flex;
+    width: 100%;
+    
+margin: 20px;}
+
+    .login fieldset {color: blue;
+    text-align: center;}
