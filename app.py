@@ -12,7 +12,7 @@ app = Flask(__name__)
 #app.config.from_object(Config)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://database_cjro_user:NV7T7Lc3ZPOpzhKHxJJmSOXzieu3ssWY@dpg-ck7ar3o8elhc7393mi80-a.oregon-postgres.render.com/database_cjro"
-#app.config['SECRET_KEY'] = 'your_secret_key'
+app.config['SECRET_KEY'] = 'your_secret_key'
 db = SQLAlchemy(app)    
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
@@ -39,10 +39,15 @@ def index():
     posts = BlogPost.query.all()
     return render_template('index.html', posts=posts)
 
-@app.route('/base')
-def base():
+@app.route('/grid')
+def grid():
     posts = BlogPost.query.all()
-    return render_template('base.html', posts=posts)
+    return render_template('grid.html', posts=posts)
+
+@app.route('/temp')
+def temp():
+    posts = BlogPost.query.all()
+    return render_template('temp.html', posts=posts)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():

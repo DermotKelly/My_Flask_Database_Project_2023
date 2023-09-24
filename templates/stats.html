@@ -1,19 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Stats</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-</head>
-<body>
-  <header>
-    <h1>Stats</h1>
-    <nav>
-      <ul>
-        <li><a href="{{ url_for('index') }}">Back to Home</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
+{% extends "grid.html" %}
+    {% block content %}
     <h2>Title Statistics</h2>
     <p>Average title length: {{ average_length }} characters</p>
     <p>Maximum title length: {{ max_length }} characters</p>
@@ -27,6 +13,4 @@
     <p>Minimum content length: {{ c_min_length }} characters</p>
     <p>Total content length: {{ c_total_length }} characters</p>
     <p>Median content length: {{ c_median_length }} characters</p>
-  </main>
-</body>
-</html>
+    {% endblock content %}

@@ -67,6 +67,14 @@
      
         <nav class="navbar">
             Side Nav
+            <ul>
+                {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('create') }}">Create Post</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                <li><a href="{{ url_for('stats') }}">Stats</a></li>   
+                {% endif %}   
+            </ul>       
+            
         </nav>  
        
                  
@@ -87,7 +95,7 @@
         </main>
         
         <footer>
-            <div class="copyright-text">Copyright 2023 &copy; My <strong>MY BLOG-</strong>  <i> All Rights Reserved</i></div>    
+            <div class="copyright-text">Copyright 2023 &copy; My <strong>-BLOG</strong>  <i> All Rights Reserved</i></div>    
         </footer>
 
     </wrapper>
