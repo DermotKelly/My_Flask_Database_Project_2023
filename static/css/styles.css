@@ -1,0 +1,444 @@
+/********************************
+Reset default values on webpage
+*********************************/
+*{box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{background-color: black;
+    padding-top: 80px;
+    overflow-x: hidden;
+  }
+
+h1, p {color: white;}
+
+/*********************************
+Set page background image
+**********************************/
+
+body {background-color:black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;}
+    
+/*********************************
+  Style wrapper for page content
+********************************/
+.wrapper{background-color: black;
+        margin: auto;
+        width: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        height: 100%;
+        }
+
+/*********************************
+  Style Header
+********************************/
+header {background-color: black; /*fix top nav so it is visable when scrolling*/
+box-shadow: 0 1px 6px 0 black;
+height: 80px;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+color: white;}
+
+
+/*.logo {display: inline-block;
+font-size: 30px;}
+
+/******************************************
+  Style Sliding HERO
+******************************************/
+.slideshow-container{grid-column: 1/6;
+grid-row: 1/2;}
+
+
+
+
+
+/******************************************
+  Style Side-bar section 
+******************************************/
+
+section.sidebar{grid-column: 1/2;
+grid-row: 2/3;}
+
+section.sidebar 
+{background-image: linear-gradient(10deg, blue, black);
+height: auto;
+min-height: 500px;
+font-size: 25px;
+color: white;
+text-transform: capitalize;
+padding: 30px;
+margin: 20px;
+border: 2px solid white;
+border-radius: 15px;
+display: grid;
+text-decoration: none;
+list-style: none;
+}
+
+.navbar ul li {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  background-image: linear-gradient(10deg, blue, black);
+  border: 2px solid white;
+  color: blue;
+}
+
+.navbar ul li a:hover {
+  background-color: white;
+  color: blue;
+}
+
+
+.navbar a {color: white;
+text-decoration: none;
+list-style: none;}
+
+
+
+
+
+section.content {grid-column: 2/6;
+  grid-row: 2/3;
+background-image: linear-gradient(10deg, blue, black);
+font-size: 25px;
+color: white;
+text-transform: capitalize;
+padding: 30px;
+margin: 20px;
+border: 2px solid white;
+border-radius: 15px;}
+
+
+.content ul li {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  padding: 5px;
+  background-image: linear-gradient(10deg, blue, black);
+  border: 2px solid white;
+  color: blue;
+}
+
+.content ul li a:hover {
+  background-color: white;
+  color: blue;
+}
+
+
+.content a {color: white;
+text-decoration: none;
+list-style: none;}
+
+
+
+/******************************************
+  Style Footer Section 
+******************************************/
+
+.footer{grid-column: 1/6;
+grid-row: 3/4;
+display: grid;
+background-color: blue;
+}
+
+.footer .copyright-text {background-color: black;
+color: white;
+align-items: center;
+justify-content: center;
+font-size: 15px;
+display:flex;
+min-height: 50px;
+padding:0 20px;}
+
+
+
+/****************************************/
+
+/************************************
+Scrollbar CSS
+*************************************/
+
+body::-webkit-scrollbar {width: 15px;}
+  
+  body::-webkit-scrollbar-track {
+    background: black;      
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: blue;    
+    border-radius: 20px;       
+    border: 3px solid black;  
+  }
+
+/****************************************/
+
+
+/************************************
+Navigation Bar (Start of CSS)
+*************************************/
+/*nav {display: inline-block;}
+
+header nav ul li {display: inline-block;}*/
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+display: flex;
+justify-content: end;}
+
+header nav ul li a {color: rgba(255, 255, 255, 0.406);
+    position: relative;
+    font-size: 20px;
+    letter-spacing: 0.37px;
+    text-decoration: none;
+    margin-right: 24px;
+}
+
+header nav ul li:last-of-type a {margin-right:0;}
+
+header nav ul li a:hover {color: white;}
+
+header nav ul li a:hover:after {width:100%;}
+
+header nav ul li a:after {color: red;
+position: absolute;
+background-color: red;
+height: 3px;
+width: 0;
+left: 0;
+bottom: -10px;
+transition: 0.3s;}
+
+
+/************************************
+End of Navigation CSS
+*************************************/
+header .container 
+{width: 80%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: black;
+margin: auto;
+padding: 0 16px;}
+
+header .logo .red-dot{
+    color: white;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    /*display: inline-block;*/
+}
+
+section.hero{position: relative;}
+
+section.hero .hero-content 
+{    position: absolute;
+    top: 0;
+    left:0;
+    background-color: yellow;
+    opacity: 0.4;
+    height: 100%;
+    width: 100%;
+    display: flex;}
+
+section.hero img{
+    border-radius: 50%;}
+
+.slideshow-container{
+    margin: auto;
+    width: 100vw;}
+
+.mySlides img{width: 100%;
+}
+
+.dots{height: 50px;}
+
+.td:nth-child(even) {
+  background-color: red;
+}
+
+/**********************
+Form to Create Post plus button
+**********************/
+#create {
+  border: 2px solid white;
+  border-radius: 15px;
+  display:flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+#create input {border: 5px solid white;
+  border-radius: 15px;
+color: black;
+font-size: 15px;
+padding: 15px;
+margin-bottom: 10px;}
+
+#create  textarea {border: 3px solid white;
+border-radius: 15px;
+color: black;
+height: 300px;
+font-size: 15px;
+padding: 15px;
+margin-bottom: 10px;}
+
+#create button{
+  border: 3px solid white;
+  background-image: linear-gradient(10deg, blue, black);
+  padding: 20px;
+  margin-top: 20px;
+  width: 20%;
+  color: white;
+  font-size: 1em;
+  align-items: center;
+  font-weight: 400;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+#edit textarea {border: 5px solid white;
+border-radius: 15px;
+color: black;
+font-size: 1em;
+padding: 15px;
+margin-bottom: 10px;}
+
+
+#save, #delete {border: 3px solid white;
+  background-image: linear-gradient(10deg, blue, black);
+  padding: 20px;
+  margin-top: 20px;
+  width: 20%;
+  color: white;
+  font-size: 1em;
+  align-items: center;
+  font-weight: 400;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;}
+
+  #edit {
+    border: 2px solid white;
+    border-radius: 15px;
+    display:flex;
+    flex-direction: column;
+    padding: 30px;
+  }
+
+
+/**********************
+Register + Login
+**********************/
+#register input {border: 5px solid white;
+  border-radius: 15px;
+color: black;
+font-size: 15px;
+padding: 10px;
+margin: 10px;}
+
+#register button{
+  border: 3px solid white;
+  background-image: linear-gradient(10deg, blue, black);
+  padding: 20px;
+  margin-top: 20px;
+  width: 20%;
+  color: white;
+  font-size: 0.5em;
+  align-items: center;
+  font-weight: 400;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;}
+
+  #login input {border: 5px solid white;
+    border-radius: 15px;
+  color: black;
+  font-size: 15px;
+  padding: 10px;
+  margin: 10px;}
+  
+  #login button{
+    border: 3px solid white;
+    background-image: linear-gradient(10deg, blue, black);
+    padding: 20px;
+    margin-top: 20px;
+    width: 20%;
+    color: white;
+    font-size: 0.5em;
+    align-items: center;
+    font-weight: 400;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;}
+
+    
+
+    #logout button{
+      border: 3px solid white;
+      background-image: linear-gradient(10deg, blue, black);
+      padding: 20px;
+      margin-top: 20px;
+      width: 20%;
+      color: white;
+      font-size: 0.5em;
+      align-items: center;
+      font-weight: 400;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;}
+
+#postcontent
+{border: 3px solid white;
+  border-radius: 15px;
+  color: black;
+  height: 300px;
+  font-size: 20px;
+  padding: 15px;
+  margin-bottom: 10px;}
+
+    
+/**********************
+Mobile Settings
+**********************/
+@media (min-width: 320px) and (max-width:850px)
+{
+    header .container {display: flex;
+        flex-direction: column;
+    overflow: hidden;}
+
+    .bmi-image-container {margin-top: 30px;
+    height: auto;
+width: auto;}
+
+section.sidebar{grid-column: 1/6;
+  grid-row: 1/2;}
+
+section.content {grid-column: 1/6;
+  grid-row: 2/3;}
+    
+.footer{grid-column: 1/6;
+    grid-row: 3/4;}
+  
+
+    footer .copyright-text {font-size: 3vw;}
+        }
+
+      

@@ -39,15 +39,10 @@ def index():
     posts = BlogPost.query.all()
     return render_template('index.html', posts=posts)
 
-@app.route('/grid')
-def grid():
+@app.route('/base')
+def base():
     posts = BlogPost.query.all()
-    return render_template('grid.html', posts=posts)
-
-@app.route('/temp')
-def temp():
-    posts = BlogPost.query.all()
-    return render_template('temp.html', posts=posts)
+    return render_template('base.html', posts=posts)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():

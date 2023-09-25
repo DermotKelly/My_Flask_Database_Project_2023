@@ -44,7 +44,7 @@ img {vertical-align:middle;}
   .dots {background-color: black;}
   
   .active {
-    background-color: grey;
+    background-color: blue;
   }
   
   /* Fading animation */

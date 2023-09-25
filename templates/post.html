@@ -1,7 +1,23 @@
-{% extends "grid.html" %}
+{% extends "base.html" %}
     {% block content %}
-    <header>
-        <h1>Blog with Flask</h1>
+    
+    <h1>Blog with Flask</h1>
+    <br>
+    <div id="posttitle">
+    <h1>Title - {{ post.title }}</h1>
+    </div>
+    <div id="postcontent">
+        <p>{{ post.content }}</p>
+    </div>
+    <div id="postauthor">
+        <p>Author: {{ post.author }}</p>
+    </div>
+    <div id="postcreated">
+        <p>Created At: {{ post.created_at }}</p>
+    </div>
+    
+    
+    
     <nav class="navbar">
         <ul>
             <li><a href="{{ url_for('index') }}">Home</a></li>
@@ -9,11 +25,6 @@
             <li><a href="{{ url_for('edit', post_id=post.id) }}">Edit Post</a></li>
         </ul>
     </nav>
-    </header>
-
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
-    <p>Author: {{ post.author }}</p>
-    <p>Created At: {{ post.created_at }}</p>
+    
     {% endblock content %}
 
