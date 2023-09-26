@@ -429,14 +429,17 @@ Mobile Settings
 width: auto;}
 
 section.sidebar{grid-column: 1/6;
-  grid-row: 1/2;}
+  grid-row: 2/3;}
 
 section.content {grid-column: 1/6;
-  grid-row: 2/3;}
+  grid-row: 3/4;}
     
 .footer{grid-column: 1/6;
-    grid-row: 3/4;}
-  
+    grid-row: 4/5;}
+
+section.sidebar {
+      height: auto;
+    }
 
     footer .copyright-text {font-size: 3vw;}
         }
